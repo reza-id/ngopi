@@ -9,6 +9,7 @@ import dev.cianjur.ngopi.core.data.source.remote.network.TmdbApi
 import dev.cianjur.ngopi.core.domain.repository.NontonRepository
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,6 +33,13 @@ val databaseModule = module {
 
 val networkModule = module {
     single {
+        val hostname = "api.themoviedb.org"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/oD/WAoRPvbez1Y2dfYfuo4yujAcYHXdv1Ivb2v2MOKk=")
+            .add(hostname, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
+            .add(hostname, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+            .add(hostname, "sha256/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=")
+            .build()
         val apiKeyInterceptor = Interceptor {
             val newUrl = it.request().url.newBuilder().addQueryParameter("api_key", "758680e7a401d859b4984c0622a4cbae").build()
             it.proceed(it.request().newBuilder().url(newUrl).build())
@@ -41,6 +49,7 @@ val networkModule = module {
             .addInterceptor(apiKeyInterceptor)
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
     single {
