@@ -1,5 +1,8 @@
 package dev.cianjur.ngopi.core.data.source.remote.response
 
+import androidx.annotation.Keep
+
+@Keep
 data class TvResponse(
     val backdrop_path: String,
     val first_air_date: String,
