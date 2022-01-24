@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../.gradle/caches/transforms-3/ca42476e9432a3ec0e81d1cd69b3cfd7/transformed/jetified-navigation-dynamic-features-fragment-2.3.5/res/layout/dynamic_feature_install_fragment.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/drawable/card_shape.xml" value="0.38125" />
+        <entry key="app/src/main/res/drawable/ic_star_filled.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/item_list_nonton.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
+        <entry key="core/src/main/res/drawable/ic_broken_image_black.xml" value="0.38125" />
+        <entry key="core/src/main/res/drawable/ic_error.xml" value="0.38125" />
+        <entry key="core/src/main/res/drawable/ic_loading.xml" value="0.38125" />
+        <entry key="core/src/main/res/drawable/ic_refresh_black.xml" value="0.38125" />
+        <entry key="core/src/main/res/drawable/ic_star_outline.xml" value="0.38125" />
+        <entry key="core/src/main/res/drawable/ic_trending.xml" value="0.38125" />
+        <entry key="core/src/main/res/layout/fragment_list.xml" value="0.3651041666666667" />
+        <entry key="core/src/main/res/layout/fragment_module_loader.xml" value="0.3651041666666667" />
+        <entry key="core/src/main/res/layout/item_nonton.xml" value="0.3651041666666667" />
+        <entry key="core/src/main/res/layout/view_error.xml" value="0.3651041666666667" />
+        <entry key="favorite/src/main/res/layout/fragment_favorite.xml" value="0.3651041666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

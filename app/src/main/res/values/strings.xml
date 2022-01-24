@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NgomonginPilem</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tv_shows">TV Shows</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="overview">Overview</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+</resources>
