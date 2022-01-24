@@ -7,6 +7,8 @@ import dev.cianjur.ngopi.core.data.source.local.room.NontonDatabase
 import dev.cianjur.ngopi.core.data.source.remote.RemoteDataSource
 import dev.cianjur.ngopi.core.data.source.remote.network.TmdbApi
 import dev.cianjur.ngopi.core.domain.repository.NontonRepository
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -18,10 +20,12 @@ import java.util.concurrent.TimeUnit
 
 val databaseModule = module {
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("agustiana".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             NontonDatabase::class.java, "nonton.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration().openHelperFactory(factory).build()
     }
     factory { get<NontonDatabase>().nontonDao() }
 }
