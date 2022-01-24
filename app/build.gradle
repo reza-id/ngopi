@@ -43,5 +43,8 @@ android {
 
 dependencies {
     implementation project(":core")
+
+    // leakCanary 2.8+ causing error for minified debug flavor
+    //noinspection GradleDependency
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 }
