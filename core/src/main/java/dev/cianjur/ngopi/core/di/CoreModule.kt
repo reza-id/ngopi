@@ -1,6 +1,7 @@
 package dev.cianjur.ngopi.core.di
 
 import androidx.room.Room
+import dev.cianjur.ngopi.core.BuildConfig
 import dev.cianjur.ngopi.core.data.NontonRepositoryImpl
 import dev.cianjur.ngopi.core.data.source.local.LocalDataSource
 import dev.cianjur.ngopi.core.data.source.local.room.NontonDatabase
@@ -33,7 +34,7 @@ val databaseModule = module {
 
 val networkModule = module {
     single {
-        val hostname = "api.themoviedb.org"
+        val hostname = BuildConfig.BASE_URL.removePrefix("https://").removeSuffix("/3/")
         val certificatePinner = CertificatePinner.Builder()
             .add(hostname, "sha256/oD/WAoRPvbez1Y2dfYfuo4yujAcYHXdv1Ivb2v2MOKk=")
             .add(hostname, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
@@ -41,7 +42,7 @@ val networkModule = module {
             .add(hostname, "sha256/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=")
             .build()
         val apiKeyInterceptor = Interceptor {
-            val newUrl = it.request().url.newBuilder().addQueryParameter("api_key", "758680e7a401d859b4984c0622a4cbae").build()
+            val newUrl = it.request().url.newBuilder().addQueryParameter("api_key", BuildConfig.API_KEY).build()
             it.proceed(it.request().newBuilder().url(newUrl).build())
         }
         OkHttpClient.Builder()
@@ -54,7 +55,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()

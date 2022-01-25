@@ -15,6 +15,9 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
+        buildConfigField "String", "API_KEY", "\"758680e7a401d859b4984c0622a4cbae\""
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -52,7 +55,10 @@ dependencies {
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$okhttp_bom_version"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
