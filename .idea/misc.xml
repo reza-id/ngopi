@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.3651041666666667" />
         <entry key="app/src/main/res/layout/item_list_nonton.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/view_error.xml" value="0.3" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
         <entry key="core/src/main/res/drawable/ic_broken_image_black.xml" value="0.38125" />
         <entry key="core/src/main/res/drawable/ic_error.xml" value="0.38125" />
@@ -20,6 +21,7 @@
         <entry key="core/src/main/res/layout/fragment_list.xml" value="0.3651041666666667" />
         <entry key="core/src/main/res/layout/fragment_module_loader.xml" value="0.3651041666666667" />
         <entry key="core/src/main/res/layout/item_nonton.xml" value="0.3651041666666667" />
+        <entry key="core/src/main/res/layout/item_nonton_shimmer.xml" value="0.3277777777777778" />
         <entry key="core/src/main/res/layout/view_error.xml" value="0.3651041666666667" />
         <entry key="favorite/src/main/res/layout/fragment_favorite.xml" value="0.3651041666666667" />
       </map>
