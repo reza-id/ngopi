@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 
 class RemoteDataSource(private val tmdbApi: TmdbApi) {
 
@@ -22,6 +23,7 @@ class RemoteDataSource(private val tmdbApi: TmdbApi) {
                     emit(ApiResponse.Empty)
                 }
             } catch (e: Exception) {
+                Timber.e(e)
                 emit(ApiResponse.Error(e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
@@ -38,6 +40,7 @@ class RemoteDataSource(private val tmdbApi: TmdbApi) {
                     emit(ApiResponse.Empty)
                 }
             } catch (e: Exception) {
+                Timber.e(e)
                 emit(ApiResponse.Error(e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)

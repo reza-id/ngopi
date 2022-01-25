@@ -15,4 +15,6 @@ dependencies {
 
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
+
+    implementation "com.jakewharton.timber:timber:5.0.1"
 }

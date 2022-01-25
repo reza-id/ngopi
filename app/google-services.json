@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "55294659100",
+    "project_id": "ngopi-dev",
+    "storage_bucket": "ngopi-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55294659100:android:1bcc2f5456ca779f652dd9",
+        "android_client_info": {
+          "package_name": "dev.cianjur.ngopi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55294659100-gaf6sde2asqheak69igap50vraoe8mcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjHxZcLHvuDQHo9N5fASoBP7JKXhHY4EE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55294659100-gaf6sde2asqheak69igap50vraoe8mcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

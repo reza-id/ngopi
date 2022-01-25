@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 apply from: '../shared_dependencies.gradle'
 
@@ -43,6 +45,10 @@ android {
 
 dependencies {
     implementation project(":core")
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     // leakCanary 2.8+ causing error for minified debug flavor
     //noinspection GradleDependency
