@@ -9,13 +9,14 @@ import dev.cianjur.ngopi.core.domain.model.NontonType
 
 object DataMapper {
     fun mapMovieResponsesToEntities(input: List<MovieResponse>): List<MovieEntity> =
-        input.map {
+        input.mapIndexed { index, it ->
             MovieEntity(
                 movieId = it.id,
                 title = it.title,
                 poster_path = it.poster_path,
                 backdrop_path = it.backdrop_path,
                 popularity = it.popularity,
+                popularityIndex = index,
                 vote_count = it.vote_count,
                 vote_average = it.vote_average,
                 release_date = it.release_date,
@@ -32,6 +33,7 @@ object DataMapper {
                 posterPath = it.poster_path ?: "",
                 backdropPath = it.backdrop_path ?: "",
                 popularity = it.popularity,
+                popularityIndex = it.popularityIndex,
                 voteCount = it.vote_count,
                 voteAverage = it.vote_average,
                 releaseDate = it.release_date,
@@ -47,6 +49,7 @@ object DataMapper {
         poster_path = input.posterPath,
         backdrop_path = input.backdropPath,
         popularity = input.popularity,
+        popularityIndex = input.popularityIndex,
         vote_count = input.voteCount,
         vote_average = input.voteAverage,
         release_date = input.releaseDate,
@@ -55,13 +58,14 @@ object DataMapper {
     )
 
     fun mapTvShowResponsesToEntities(input: List<TvResponse>): List<TvShowEntity> =
-        input.map {
+        input.mapIndexed { index, it ->
             TvShowEntity(
                 tvId = it.id,
                 name = it.name,
                 poster_path = it.poster_path,
                 backdrop_path = it.backdrop_path,
                 popularity = it.popularity,
+                popularityIndex = index,
                 vote_count = it.vote_count,
                 vote_average = it.vote_average,
                 first_air_date = it.first_air_date,
@@ -78,6 +82,7 @@ object DataMapper {
                 posterPath = it.poster_path ?: "",
                 backdropPath = it.backdrop_path ?: "",
                 popularity = it.popularity,
+                popularityIndex = it.popularityIndex,
                 voteCount = it.vote_count,
                 voteAverage = it.vote_average,
                 releaseDate = it.first_air_date,
@@ -93,6 +98,7 @@ object DataMapper {
         poster_path = input.posterPath,
         backdrop_path = input.backdropPath,
         popularity = input.popularity,
+        popularityIndex = input.popularityIndex,
         vote_count = input.voteCount,
         vote_average = input.voteAverage,
         first_air_date = input.releaseDate,

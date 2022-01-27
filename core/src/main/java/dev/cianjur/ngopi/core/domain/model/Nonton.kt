@@ -11,6 +11,7 @@ data class Nonton(
     val posterPath: String,
     val backdropPath: String,
     val popularity: Double,
+    val popularityIndex: Int,
     val voteCount: Int,
     val voteAverage: Double,
     val releaseDate: String,

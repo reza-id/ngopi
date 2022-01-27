@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="install_failed">Error installing feature</string>
+    <string name="install_failed">Error installing feature [%1$d]</string>
     <string name="install_cancelled">Installation canceled</string>
 
     <string name="popularity">Popularity: <xliff:g example="100.123" id="first_number">%1$.2f</xliff:g></string>

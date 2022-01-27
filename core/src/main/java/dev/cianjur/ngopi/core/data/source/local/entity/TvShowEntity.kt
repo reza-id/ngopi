@@ -10,6 +10,7 @@ data class TvShowEntity(
     val poster_path: String?,
     val backdrop_path: String?,
     val popularity: Double,
+    val popularityIndex: Int,
     val vote_count: Int,
     val vote_average: Double,
     val first_air_date: String,

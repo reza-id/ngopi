@@ -1,6 +1,6 @@
 package dev.cianjur.ngopi
 
-import android.app.Application
+import com.google.android.play.core.splitcompat.SplitCompatApplication
 import dev.cianjur.ngopi.core.di.databaseModule
 import dev.cianjur.ngopi.core.di.networkModule
 import dev.cianjur.ngopi.core.di.repositoryModule
@@ -14,7 +14,7 @@ import org.koin.core.logger.Level
 import timber.log.Timber
 
 @Suppress("unused") // as used in manifest file
-class NgopiApplication : Application() {
+class NgopiApplication : SplitCompatApplication() {
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) {

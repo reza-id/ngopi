@@ -19,15 +19,16 @@ class ModuleLoaderFragment : AbstractProgressFragment() {
     }
 
     override fun onProgress(status: Int, bytesDownloaded: Long, bytesTotal: Long) {
+        binding.message.text = "Installing... [$status]"
         binding.progressBar.progress = (bytesDownloaded.toDouble() * 100 / bytesTotal).toInt()
     }
 
     override fun onCancelled() {
-        binding.message.text = getString(R.string.install_failed)
+        binding.message.text = getString(R.string.install_cancelled)
     }
 
     override fun onFailed(errorCode: Int) {
-        binding.message.text = getString(R.string.install_cancelled)
+        binding.message.text = getString(R.string.install_failed, errorCode)
     }
 
 }

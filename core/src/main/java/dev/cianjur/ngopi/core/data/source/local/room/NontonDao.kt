@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface NontonDao {
 
-    @Query("SELECT * FROM movies")
+    @Query("SELECT * FROM movies ORDER BY popularityIndex ASC")
     fun getPopularMovies(): Flow<List<MovieEntity>>
 
     @Query("SELECT * FROM movies WHERE isFavorite = 1")
@@ -20,7 +20,7 @@ interface NontonDao {
     @Update
     suspend fun updateFavoriteMovie(movie: MovieEntity)
 
-    @Query("SELECT * FROM tv_shows")
+    @Query("SELECT * FROM tv_shows ORDER BY popularityIndex ASC")
     fun getPopularTvShows(): Flow<List<TvShowEntity>>
 
     @Query("SELECT * FROM tv_shows WHERE isFavorite = 1")
