@@ -36,7 +36,7 @@ class TvShowsFragment : Fragment() {
                 startActivity(intent)
             }
 
-            viewModel.tvShows.observe(viewLifecycleOwner, { tvShows ->
+            viewModel.tvShows.observe(viewLifecycleOwner) { tvShows ->
                 if (tvShows != null) {
                     when (tvShows) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
@@ -51,7 +51,7 @@ class TvShowsFragment : Fragment() {
                         }
                     }
                 }
-            })
+            }
 
             with(binding.rvList) {
                 layoutManager = LinearLayoutManager(context)

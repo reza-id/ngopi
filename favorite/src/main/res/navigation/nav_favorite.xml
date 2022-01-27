@@ -8,5 +8,6 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="dev.cianjur.ngopi.favorite.FavoriteFragment"
-        android:label="My Favorite" />
+        android:label="My Favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

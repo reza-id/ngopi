@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="install_pending">Pending Installation…</string>
+    <string name="install_downloading">Downloading…</string>
+    <string name="install_downloaded">Downloaded…</string>
+    <string name="install_installing">Installing…</string>
     <string name="install_failed">Error installing feature [%1$d]</string>
     <string name="install_cancelled">Installation canceled</string>
 

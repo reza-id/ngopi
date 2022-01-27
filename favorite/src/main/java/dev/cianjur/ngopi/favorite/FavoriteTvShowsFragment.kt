@@ -33,7 +33,7 @@ class FavoriteTvShowsFragment : Fragment() {
                 startActivity(intent)
             }
 
-            viewModel.tvShows.observe(viewLifecycleOwner, { tvShows ->
+            viewModel.tvShows.observe(viewLifecycleOwner) { tvShows ->
                 binding.progressBar.visibility = View.GONE
                 if (tvShows?.isNullOrEmpty() == true) {
                     binding.rvList.visibility = View.GONE
@@ -44,7 +44,7 @@ class FavoriteTvShowsFragment : Fragment() {
                     binding.viewError.root.visibility = View.GONE
                     tvShowsAdapter.submitList(tvShows)
                 }
-            })
+            }
 
             with(binding.rvList) {
                 layoutManager = LinearLayoutManager(context)

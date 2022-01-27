@@ -33,7 +33,7 @@ class FavoriteMoviesFragment : Fragment() {
                 startActivity(intent)
             }
 
-            viewModel.movies.observe(viewLifecycleOwner, { movies ->
+            viewModel.movies.observe(viewLifecycleOwner) { movies ->
                 binding.progressBar.visibility = View.GONE
                 if (movies?.isNullOrEmpty() == true) {
                     binding.rvList.visibility = View.GONE
@@ -44,7 +44,7 @@ class FavoriteMoviesFragment : Fragment() {
                     binding.viewError.root.visibility = View.GONE
                     moviesAdapter.submitList(movies)
                 }
-            })
+            }
 
             with(binding.rvList) {
                 layoutManager = LinearLayoutManager(context)

@@ -36,7 +36,7 @@ class MoviesFragment : Fragment() {
                 startActivity(intent)
             }
 
-            viewModel.movies.observe(viewLifecycleOwner, { movies ->
+            viewModel.movies.observe(viewLifecycleOwner) { movies ->
                 if (movies != null) {
                     when (movies) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
@@ -51,7 +51,7 @@ class MoviesFragment : Fragment() {
                         }
                     }
                 }
-            })
+            }
 
             with(binding.rvList) {
                 layoutManager = LinearLayoutManager(context)
